@@ -4,7 +4,7 @@ import { useTheme } from '../contexts/ThemeContext'
 import '../styles/GiscusComments.css'
 
 const GISCUS_CONFIG = {
-  repo: 'ian-dbg/blog',
+  repo: 'ihnk-dbg/blog',
   repoId: 'YOUR_REPO_ID',
   category: 'Announcements',
   categoryId: 'YOUR_CATEGORY_ID',
