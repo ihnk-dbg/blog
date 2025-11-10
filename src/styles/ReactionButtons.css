@@ -1,0 +1,98 @@
+.reaction-buttons {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  margin: 2rem 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.reaction-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 25px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.reaction-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(88, 166, 255, 0.2), transparent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: 0;
+}
+
+.reaction-btn > * {
+  position: relative;
+  z-index: 1;
+}
+
+.reaction-btn:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--accent-primary);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(88, 166, 255, 0.2);
+}
+
+.reaction-btn:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+.reaction-btn.active {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-warm));
+  border-color: var(--accent-primary);
+  color: var(--bg-primary);
+  box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
+  animation: pulse 0.5s ease;
+}
+
+.reaction-btn.active::before {
+  width: 0;
+  height: 0;
+}
+
+.reaction-btn span {
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .reaction-buttons {
+    gap: 0.75rem;
+    padding: 1rem 0;
+  }
+
+  .reaction-btn {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,39 @@
+.quote-highlight {
+  position: fixed;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  padding: 0.5rem 1rem;
+  box-shadow: var(--shadow-lg);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-fast);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.quote-highlight.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quote-highlight button {
+  padding: 0.5rem 1rem;
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.quote-highlight button:hover {
+  background: var(--accent-secondary);
+  transform: scale(1.05);
+}
+
