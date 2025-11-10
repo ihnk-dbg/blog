@@ -1,0 +1,38 @@
+.home-page {
+  width: 100%;
+  min-height: calc(100vh - 200px);
+}
+
+.home-sections {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .home-sections {
+    margin: 3rem auto;
+    padding: 0 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-sections {
+    margin: 1.5rem auto;
+    padding: 0 1.25rem;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-sections {
+    margin: 1.25rem auto;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,90 @@
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-warm));
+  color: var(--bg-primary);
+  font-weight: 800;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatar-inner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  animation: avatarShine 3s infinite;
+}
+
+@keyframes avatarShine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+.avatar-text {
+  position: relative;
+  z-index: 1;
+  font-size: inherit;
+}
+
+/* Size variants */
+.avatar-small {
+  width: 32px;
+  height: 32px;
+  font-size: 0.75rem;
+}
+
+.avatar-medium {
+  width: 64px;
+  height: 64px;
+  font-size: 1.25rem;
+}
+
+.avatar-large {
+  width: 120px;
+  height: 120px;
+  font-size: 2.5rem;
+}
+
+.avatar-xl {
+  width: 150px;
+  height: 150px;
+  font-size: 3rem;
+}
+
+@media (max-width: 768px) {
+  .avatar-xl {
+    width: 120px;
+    height: 120px;
+    font-size: 2.5rem;
+  }
+  
+  .avatar-large {
+    width: 100px;
+    height: 100px;
+    font-size: 2rem;
+  }
+}
+
